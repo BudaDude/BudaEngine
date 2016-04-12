@@ -1,5 +1,5 @@
 ﻿using System;
-using BudaDude.Core;
+using BudaEngine.Core;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -10,21 +10,21 @@ namespace FlappyBird
     {
         public Plane()
         {
-            Position = new Vector2(5,5);
+            Position = new Vector2(50,5);
             Sprite.Texture = Art.Plane;
-
+			Sprite.Origin = new Vector2 (Sprite.Texture.Width / 2, Sprite.Texture.Height / 2);
 
         }
 
 
         public override void Update()
         {
-            KeyboardState state = new KeyboardState();
             Position.Y+=5;
-
-            if (state.IsKeyDown(Keys.Space))
+			Rotation+= 0.02f;
+			if (Input.WasKeyPressed(Keys.Space))
             {
-                Position.Y -= 25;
+                Position.Y -= 100;
+				Rotation = -45;
             }
 
             if (Position.X > BudaGame.ScreenSize.X) Position.X = 0-Sprite.Texture.Width;

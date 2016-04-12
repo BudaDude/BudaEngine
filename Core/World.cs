@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using BudaDude.Core;
+using BudaEngine.Core;
 
-namespace BudaDude
+namespace BudaEngine
 {
 	public class World
 	{

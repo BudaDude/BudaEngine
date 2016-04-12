@@ -1,4 +1,4 @@
-﻿using BudaDude.Core;
+﻿using BudaEngine.Core;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -47,6 +47,10 @@ namespace FlappyBird
 
             base.Draw(gameTime);
         }
+
+		public void GameOver(){
+
+		}
 
 
     }

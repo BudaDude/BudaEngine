@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace BudaDude.Core
+namespace BudaEngine.Core
 {
 	public class Sprite
 	{

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BudaDude.Core
+namespace BudaEngine
 {
 	public class Tile
 	{

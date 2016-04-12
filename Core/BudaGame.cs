@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace BudaDude.Core
+namespace BudaEngine.Core
 {
 	public class BudaGame: Game
 	{
@@ -53,6 +53,7 @@ namespace BudaDude.Core
 		protected override void Update (GameTime gameTime)
 		{
 			GameTime = gameTime;
+		Input.Update ();
 			base.Update (gameTime);
 		}
 
