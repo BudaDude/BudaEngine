@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{D380E6B6-0262-41D5-9ED5-7E0E7329D5D6}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>BudaEngine</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Game1.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\BudaGame.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\GameObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Sprite.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Tile.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\World.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <MonoGameContentReference Include="$(MSBuildThisFileDirectory)Content\Content.mgcb" />
+  </ItemGroup>
+</Project>
