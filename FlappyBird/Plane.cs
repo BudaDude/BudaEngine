@@ -27,7 +27,9 @@ namespace FlappyBird
 				Rotation = -45;
             }
 
-            if (Position.X > BudaGame.ScreenSize.X) Position.X = 0-Sprite.Texture.Width;
+			if (Position.Y > BudaGame.ScreenSize.Y || Position.Y < 0) {
+
+			}
             base.Update();
         }
     }

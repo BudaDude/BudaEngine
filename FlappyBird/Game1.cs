@@ -12,10 +12,12 @@ namespace FlappyBird
     {
         private Plane plane;
 
+		private int score;
 
 
         public Game1(): base()
         {
+			score = 0;
             Content.RootDirectory = "Content";
             
         }
@@ -42,7 +44,11 @@ namespace FlappyBird
             Graphics.GraphicsDevice.Clear(Color.DarkGray);
 
             SpriteBatch.Begin();
+			//Background
+			SpriteBatch.Draw (Art.Background,
+				new Rectangle (0, 0, ViewPort.Width, ViewPort.Height), Color.White);
             plane.Draw(SpriteBatch);
+			SpriteBatch.DrawString (Art.Font, "Score: " + score, new Vector2 (550, 20), Color.Tomato);
             SpriteBatch.End();
 
             base.Draw(gameTime);
