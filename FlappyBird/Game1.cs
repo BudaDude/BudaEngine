@@ -30,13 +30,14 @@ namespace FlappyBird
         {
 
             Art.Load(this.Content);
-
+			SceneManager.AddScene ("Game", new GameScene ());
+			SceneManager.ChangeScene ("Game");
             base.LoadContent();
         }
 
         protected override void Update(GameTime gameTime)
         {
-			
+			SceneManager.Update ();
             base.Update(gameTime);
         }
         protected override void Draw(GameTime gameTime)
@@ -47,6 +48,7 @@ namespace FlappyBird
 			//Background
 			SpriteBatch.Draw (Art.Background,
 				new Rectangle (0, 0, ViewPort.Width, ViewPort.Height), Color.White);
+			SceneManager.Draw (SpriteBatch);
 			SpriteBatch.DrawString (Art.Font, "Score: " + ScoreManager.Score, new Vector2 (550, 20), Color.Tomato);
             SpriteBatch.End();
 

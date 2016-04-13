@@ -3,7 +3,7 @@ using System;
 using BudaEngine.Core;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace BudaEngine
+namespace BudaEngine.Core
 {
 	static class SceneManager
 	{
@@ -45,11 +45,19 @@ namespace BudaEngine
 					CurrentScene = Scenes[sceneName];
 				}
 				CurrentScene.BeginScene();
+				CurrentScene.PlayScene();
 				return true;
 			}catch(KeyNotFoundException e){
-				Console.Write ("The key '{0}' was not found, current scene will not change.", sceneName);
+				Console.Write ("The key '{0}' was not found, current scene will not change.\n{1}", sceneName,e);
 				return false;
 			}
+		}
+
+		public static void ResetScene(){
+			CurrentScene.PauseScene ();
+			CurrentScene.EndScene();
+			CurrentScene.BeginScene();
+			CurrentScene.PlayScene();
 		}
 		/// <summary>
 		/// Update current scene.

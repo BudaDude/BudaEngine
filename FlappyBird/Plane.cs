@@ -12,6 +12,7 @@ namespace FlappyBird
         {
             Position = new Vector2(100,50);
             Sprite.Texture = Art.Plane;
+			Active = true;
 
         }
         public override void Update()
@@ -26,7 +27,7 @@ namespace FlappyBird
             }
 
 			if (Position.Y > BudaGame.ScreenSize.Y || Position.Y < 0) {
-				Position.Y = 100;
+				SceneManager.ResetScene ();
 			}
             base.Update();
         }

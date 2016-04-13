@@ -56,7 +56,6 @@ namespace BudaEngine.Core
 		{
 			GameTime = gameTime;
 			Input.Update ();
-			SceneManager.Update ();
 			base.Update (gameTime);
 		}
 
@@ -66,7 +65,6 @@ namespace BudaEngine.Core
 		/// <param name="gameTime">Provides a snapshot of timing values.</param>
 		protected override void Draw (GameTime gameTime)
 		{
-			SceneManager.Draw (SpriteBatch);
             base.Draw (gameTime);
 		}
 

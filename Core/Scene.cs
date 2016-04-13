@@ -9,28 +9,28 @@ namespace BudaEngine.Core
 		public GameObjectManager ObjectManager{ get; protected set;}
 		public Scene ()
 		{
-			GameObjectManager = new GameObjectManager ();
+			ObjectManager = new GameObjectManager ();
 		}
 
 		/// <summary>
 		/// Is called when this scene is called to the Current Scene
 		/// </summary>
-		public void BeginScene(){
+		public virtual void BeginScene(){
 
 		}
 		/// <summary>
 		/// Is called when this scene is no longer the Current Scene
 		/// </summary>
-		public void EndScene(){
-			
+		public virtual void EndScene(){
+			ObjectManager.RemoveAll ();
 		}
 
-		public void Update(){
+		public virtual void Update(){
 			if (isRunning)
 			ObjectManager.Update ();
 		}
 
-		public void Draw(SpriteBatch spriteBatch){
+		public virtual void Draw(SpriteBatch spriteBatch){
 			ObjectManager.Draw (spriteBatch);
 		}
 

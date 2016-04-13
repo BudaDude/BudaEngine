@@ -12,8 +12,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Core\BudaGame.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\GameObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Sprite.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Core\Tile.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Core\World.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Input.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\GameObjectManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Scene.cs" />
