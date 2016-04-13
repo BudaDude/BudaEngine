@@ -10,25 +10,23 @@ namespace FlappyBird
     {
         public Plane()
         {
-            Position = new Vector2(50,5);
+            Position = new Vector2(100,50);
             Sprite.Texture = Art.Plane;
-			Sprite.Origin = new Vector2 (Sprite.Texture.Width / 2, Sprite.Texture.Height / 2);
 
         }
-
-
         public override void Update()
         {
-            Position.Y+=5;
+            Position.Y+=4;
 			Rotation+= 0.02f;
 			if (Input.WasKeyPressed(Keys.Space))
             {
-                Position.Y -= 100;
+                Position.Y -= 80;
 				Rotation = -45;
+				ScoreManager.AddScore ();
             }
 
 			if (Position.Y > BudaGame.ScreenSize.Y || Position.Y < 0) {
-
+				Position.Y = 100;
 			}
             base.Update();
         }

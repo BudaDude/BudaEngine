@@ -11,7 +11,6 @@ namespace BudaEngine.Core
 		public Sprite()
 		{
 			this.SpriteEffects = SpriteEffects.None;
-			this.Origin = Vector2.Zero;
 			this.Layer = 1;
 			this.Color = Color.White;
 		    this.Texture = null;
@@ -32,7 +31,8 @@ namespace BudaEngine.Core
 		/// <summary>
 		/// Gets or sets the texture object of the sprite.
 		/// </summary>
-		public Texture2D Texture { get; set; }
+		public Texture2D Texture { get; set;}
+
 
 		/// <summary>
 		/// Gets or sets the source rectangle, which is used to determine where on the texture file to draw the sprite from.
@@ -50,9 +50,17 @@ namespace BudaEngine.Core
 		public Color Color { get; set; }
 
 		/// <summary>
-		/// Gets or sets the origin of the sprite. By default this is the top left corner.
+		/// Gets or sets the origin of the sprite. By default this is the center.
 		/// </summary>
-		public Vector2 Origin { get; set; }
+		public Vector2 Origin {
+			get { 
+				if (Texture != null) {
+					return new Vector2 (Texture.Width / 2, Texture.Height/2);
+				} else {
+					return Vector2.Zero;
+				}
+			}
+		}
 
 		/// <summary>
 		/// Gets or sets any additional effects placed on the sprite.

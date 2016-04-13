@@ -53,6 +53,9 @@
     <Compile Include="Plane.cs" />
     <Compile Include="Art.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="ScoreManager.cs" />
+    <Compile Include="Rock.cs" />
+    <Compile Include="RockManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Icon.png" />

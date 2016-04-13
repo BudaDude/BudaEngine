@@ -15,6 +15,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Core\Tile.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\World.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Input.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\GameObjectManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Scene.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\SceneManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="$(MSBuildThisFileDirectory)Content\Content.mgcb" />

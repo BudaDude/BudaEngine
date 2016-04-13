@@ -11,8 +11,10 @@ namespace BudaEngine.Core
 		public static Vector2 ScreenSize{ get { return new Vector2 (ViewPort.Width, ViewPort.Height); } }
 		public static GameTime GameTime { get; private set;}
 
+
         protected GraphicsDeviceManager Graphics;
 	    protected SpriteBatch SpriteBatch;
+
 
         public BudaGame ()
 		{
@@ -53,7 +55,8 @@ namespace BudaEngine.Core
 		protected override void Update (GameTime gameTime)
 		{
 			GameTime = gameTime;
-		Input.Update ();
+			Input.Update ();
+			SceneManager.Update ();
 			base.Update (gameTime);
 		}
 
@@ -63,8 +66,13 @@ namespace BudaEngine.Core
 		/// <param name="gameTime">Provides a snapshot of timing values.</param>
 		protected override void Draw (GameTime gameTime)
 		{
-
+			SceneManager.Draw (SpriteBatch);
             base.Draw (gameTime);
+		}
+
+		public void ResetGame(){
+			Initialize ();
+			LoadContent ();
 		}
 
 	}
