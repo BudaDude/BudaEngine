@@ -34,7 +34,7 @@ namespace BudaEngine.Core
 
 	    public virtual void Update()
 	    {
-	        
+			Position += Velocity;
 	    }
 
 	    public virtual void Draw(SpriteBatch spriteBatch)

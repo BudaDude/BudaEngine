@@ -10,18 +10,17 @@ namespace FlappyBird
     {
         public Plane()
         {
-            Position = new Vector2(100,50);
+            Position = new Vector2(100,300);
             Sprite.Texture = Art.Plane;
 			Active = true;
-
+			Velocity.Y = 8;
         }
         public override void Update()
         {
-            Position.Y+=4;
 			Rotation+= 0.02f;
 			if (Input.WasKeyPressed(Keys.Space))
             {
-                Position.Y -= 80;
+                Position.Y -= 250;
 				Rotation = -45;
 				ScoreManager.AddScore ();
             }

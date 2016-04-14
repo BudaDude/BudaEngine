@@ -73,6 +73,12 @@ namespace BudaEngine.Core
 			LoadContent ();
 		}
 
+		public void SetResolution(int width,int height){
+			Graphics.PreferredBackBufferWidth = width;
+			Graphics.PreferredBackBufferHeight = height;
+			Graphics.ApplyChanges ();
+		}
+
 	}
 }
 

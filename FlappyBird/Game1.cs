@@ -21,6 +21,7 @@ namespace FlappyBird
         }
         protected override void Initialize()
         {
+			this.SetResolution (720, 1280);
 			ScoreManager.ResetScore();
 
             base.Initialize();
@@ -49,7 +50,7 @@ namespace FlappyBird
 			SpriteBatch.Draw (Art.Background,
 				new Rectangle (0, 0, ViewPort.Width, ViewPort.Height), Color.White);
 			SceneManager.Draw (SpriteBatch);
-			SpriteBatch.DrawString (Art.Font, "Score: " + ScoreManager.Score, new Vector2 (550, 20), Color.Tomato);
+			SpriteBatch.DrawString (Art.Font, "Score: " + ScoreManager.Score, new Vector2 (500, 20), Color.Tomato);
             SpriteBatch.End();
 
             base.Draw(gameTime);
