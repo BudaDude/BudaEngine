@@ -1,6 +1,7 @@
 ﻿using System;
 using BudaEngine.Core;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework;
 
 namespace FlappyBird
 {
@@ -31,6 +32,9 @@ namespace FlappyBird
 		}
 		public override void Draw (SpriteBatch spriteBatch)
 		{
+			spriteBatch.Draw (Art.Background,
+				new Rectangle (0, 0, BudaGame.ViewPort.Width, BudaGame.ViewPort.Height), Color.White);
+			spriteBatch.DrawString (Art.Font, "Score: " + ScoreManager.Score, new Vector2 (500, 20), Color.Tomato);
 			base.Draw (spriteBatch);
 		}
 			

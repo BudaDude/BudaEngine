@@ -65,6 +65,10 @@ namespace BudaEngine.Core
 		/// <param name="gameTime">Provides a snapshot of timing values.</param>
 		protected override void Draw (GameTime gameTime)
 		{
+			Graphics.GraphicsDevice.Clear(Color.DarkGray);
+			SpriteBatch.Begin();
+			SceneManager.Draw (SpriteBatch);
+			SpriteBatch.End();
             base.Draw (gameTime);
 		}
 

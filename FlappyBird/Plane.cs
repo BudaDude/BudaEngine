@@ -26,7 +26,7 @@ namespace FlappyBird
             }
 
 			if (Position.Y > BudaGame.ScreenSize.Y || Position.Y < 0) {
-				SceneManager.ResetScene ();
+				SceneManager.ChangeScene ("Menu");
 			}
             base.Update();
         }
