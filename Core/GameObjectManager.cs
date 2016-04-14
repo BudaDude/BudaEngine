@@ -19,7 +19,10 @@ namespace BudaEngine.Core
 			objectsToAdd = new List<GameObject> ();
 			objectsToRemove = new List<GameObject> ();
 		}
-
+		/// <summary>
+		/// Add the specified <see cref="BudaEngine.Core.GameObject"/>;
+		/// </summary>
+		/// <param name="obj">Object.</param>
 		public void Add(GameObject obj){
 			objectsToAdd.Add (obj);
 		}

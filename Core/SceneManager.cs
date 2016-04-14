@@ -52,7 +52,9 @@ namespace BudaEngine.Core
 				return false;
 			}
 		}
-
+		/// <summary>
+		/// Calls PauseScene,EndScene,BeginScene,and PlayScene;
+		/// </summary>
 		public static void ResetScene(){
 			CurrentScene.PauseScene ();
 			CurrentScene.EndScene();

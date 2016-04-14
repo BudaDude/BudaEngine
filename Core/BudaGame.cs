@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using BudaEngine.Extras;
 
 namespace BudaEngine.Core
 {
@@ -43,6 +44,7 @@ namespace BudaEngine.Core
 		{
 			// Create a new SpriteBatch, which can be used to draw textures.
             SpriteBatch = new SpriteBatch(GraphicsDevice);
+			DebugContent.Load (this.Content);
 
 			//TODO: use this.Content to load your game content here 
 		}
@@ -56,6 +58,7 @@ namespace BudaEngine.Core
 		{
 			GameTime = gameTime;
 			Input.Update ();
+			Debug.Update ();
 			base.Update (gameTime);
 		}
 
@@ -68,6 +71,7 @@ namespace BudaEngine.Core
 			Graphics.GraphicsDevice.Clear(Color.DarkGray);
 			SpriteBatch.Begin();
 			SceneManager.Draw (SpriteBatch);
+			Debug.Draw (SpriteBatch);
 			SpriteBatch.End();
             base.Draw (gameTime);
 		}

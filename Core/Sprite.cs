@@ -35,8 +35,9 @@ namespace BudaEngine.Core
 
 
 		/// <summary>
-		/// Gets or sets the source rectangle, which is used to determine where on the texture file to draw the sprite from.
+		/// Gets the size.
 		/// </summary>
+		/// <value>The size.</value>
 		public Vector2 Size {
 		    get
 		    {

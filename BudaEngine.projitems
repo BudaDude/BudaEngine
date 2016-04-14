@@ -16,8 +16,13 @@
     <Compile Include="$(MSBuildThisFileDirectory)Core\GameObjectManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Scene.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\SceneManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extras\Debug.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extras\DebugContent.cs" />
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="$(MSBuildThisFileDirectory)Content\Content.mgcb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Extras\" />
   </ItemGroup>
 </Project>
