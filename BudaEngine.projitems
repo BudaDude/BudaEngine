@@ -18,11 +18,15 @@
     <Compile Include="$(MSBuildThisFileDirectory)Core\SceneManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extras\Debug.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extras\DebugContent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Components\Component.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Components\Transform.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Components\ComponentManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="$(MSBuildThisFileDirectory)Content\Content.mgcb" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Extras\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Components\" />
   </ItemGroup>
 </Project>

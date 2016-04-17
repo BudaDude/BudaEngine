@@ -53,7 +53,6 @@
     <Compile Include="Art.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="ScoreManager.cs" />
-    <Compile Include="Rock.cs" />
     <Compile Include="RockManager.cs" />
     <Compile Include="Scenes\GameScene.cs" />
     <Compile Include="Scenes\MainMenuScene.cs" />
