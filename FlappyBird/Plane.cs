@@ -1,19 +1,20 @@
 ﻿using System;
-using BudaEngine.Core;
+using BudaEngine;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
 namespace FlappyBird
 {
-    class Plane : GameObject
+	class Plane : DrawableGameObject
     {
+		Transform transform;
         public Plane()
         {
+			transform = (Transform)Components.AddComponent(new Transform());
             transform.Position = new Vector2(100,300);
-            Sprite.Texture = Art.Plane;
 			Active = true;
-			transform.Position.Y = 8;
+			transform.Velocity.Y = 8;
         }
         public override void Update()
         {
@@ -30,5 +31,19 @@ namespace FlappyBird
 			}
             base.Update();
         }
+
+		#region implemented abstract members of DrawableGameObject
+
+		public override void LoadContent ()
+		{
+			throw new NotImplementedException ();
+		}
+
+		public override void Draw (SpriteBatch spriteBatch)
+		{
+			spriteBatch.Draw (Art.Plane, transform.Position);
+		}
+
+		#endregion
     }
 }

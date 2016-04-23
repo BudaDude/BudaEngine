@@ -3,12 +3,14 @@ using System;
 using BudaEngine.Core;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace BudaEngine.Core
+namespace BudaEngine
 {
+
 	static class SceneManager
 	{
 		public static Scene CurrentScene{ get; private set;}
 		private static Dictionary<string,Scene> Scenes = new Dictionary<string, Scene>();
+
 
 		/// <summary>
 		/// Adds the scene.
@@ -18,6 +20,7 @@ namespace BudaEngine.Core
 		public static void AddScene (string key, Scene value){
 			Scenes.Add (key, value);
 		}
+			
 
 
 		/// <summary>
@@ -46,6 +49,7 @@ namespace BudaEngine.Core
 				}
 				CurrentScene.BeginScene();
 				CurrentScene.PlayScene();
+
 				return true;
 			}catch(KeyNotFoundException e){
 				Console.Write ("The key '{0}' was not found, current scene will not change.\n{1}", sceneName,e);

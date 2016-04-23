@@ -3,50 +3,23 @@ using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 using BudaEngine;
 
-namespace BudaEngine.Core
+namespace BudaEngine
 {
-	public class GameObject
+	public abstract class GameObject
 	{
+		public string ID{ get; protected set;}
+		public bool Active;
+		public ComponentManager Components{ get; protected set;}
 
-		public GameObject ()
-		{
-			transform = new Transform ();
-			this.Active = true;
-            this.Sprite = new Sprite();
+		public GameObject(){
+			Components = new ComponentManager ();
+			Components.GetComponent<Transform> ();
 		}
 
-		public Sprite Sprite{ get; protected set;}
+		public virtual void Update(){
+			Components.Update ();
+		}
 
-		public string Name{ get; set; }
-
-		protected Transform transform;
-
-		/// <summary>
-		/// This game.
-		/// </summary>
-
-		public bool Active;
-
-	    public virtual void Initialize()
-	    {
-	        
-	    }
-
-	    public virtual void Update()
-	    {
-
-	    }
-
-	    public virtual void Draw(SpriteBatch spriteBatch)
-	    {
-	        if (spriteBatch != null && Sprite.Texture != null)
-	        {
-			//	spriteBatch.Draw(Sprite.Texture, Position,null, Sprite.Color,Rotation,Sprite.Origin,Scale,Sprite.SpriteEffects,Sprite.Layer );
-	        }
-
-
-
-	    }
 	}
 }
 

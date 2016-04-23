@@ -2,7 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using BudaEngine.Extras;
 
-namespace BudaEngine.Core
+namespace BudaEngine
 {
 	public class BudaGame: Game
 	{

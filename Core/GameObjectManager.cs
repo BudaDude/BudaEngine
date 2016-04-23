@@ -2,60 +2,64 @@
 using System;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace BudaEngine.Core
+namespace BudaEngine
 {
 	public class GameObjectManager
 	{
 		private List<GameObject> gameObjects;
 
-		private List<GameObject> objectsToAdd;
-		private List<GameObject> objectsToRemove;
+		private List<GameObject> updatedGameObjects;
+
+		private List<DrawableGameObject> drawableGameObjects;
 
 		private bool isUpdating;
 
 
 		public GameObjectManager(){
 			gameObjects = new List<GameObject>();
-			objectsToAdd = new List<GameObject> ();
-			objectsToRemove = new List<GameObject> ();
+			updatedGameObjects = new List<GameObject> ();
+			drawableGameObjects = new List<DrawableGameObject> ();
+
 		}
 		/// <summary>
 		/// Add the specified <see cref="BudaEngine.Core.GameObject"/>;
 		/// </summary>
 		/// <param name="obj">Object.</param>
 		public void Add(GameObject obj){
-			objectsToAdd.Add (obj);
+			Console.WriteLine ("Added");
+			updatedGameObjects.Add (obj);
 		}
 
+		public void Add(DrawableGameObject obj){
+
+			drawableGameObjects.Add (obj);
+			updatedGameObjects.Add (obj);
+		}
+
+
 		public void RemoveAll(){
-			objectsToRemove.AddRange(gameObjects);
+			updatedGameObjects.Clear();
+			drawableGameObjects.Clear ();
 		}
 
 
 
 
 		public void Update(){
+			gameObjects.Clear ();
+			gameObjects.AddRange(updatedGameObjects);
 			isUpdating = true;
 			foreach (GameObject obj in gameObjects) {
 				if (obj.Active)
 					obj.Update ();
 			}
 			isUpdating = false;
-			UpdateList ();
-		}
 
-		private void UpdateList(){
-			gameObjects.AddRange (objectsToAdd);
-			objectsToAdd.Clear ();
-
-			foreach (GameObject obj in objectsToRemove) {
-				gameObjects.Remove (obj);
-			}
-			objectsToRemove.Clear();
 		}
+			
 
 		public void Draw(SpriteBatch spriteBatch ){
-			foreach (GameObject obj in gameObjects) {
+			foreach (DrawableGameObject obj in drawableGameObjects) {
 				if (obj.Active)
 					obj.Draw (spriteBatch);
 			}

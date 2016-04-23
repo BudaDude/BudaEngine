@@ -23,6 +23,16 @@ namespace BudaEngine
 
 			return com;
 		}
+
+		public Component GetComponent<T>(){
+			foreach (Component com in updatedComponents) {
+
+				if (com.GetType () == typeof(T)) {
+					return com;
+				}
+			}
+			return null;
+		}
 		public bool RemoveComponent<T>(){
 			foreach (Component com in updatedComponents) {
 

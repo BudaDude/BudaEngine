@@ -1,5 +1,5 @@
 ﻿using System;
-using BudaEngine.Core;
+using BudaEngine;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 
@@ -8,15 +8,13 @@ namespace FlappyBird
 	public class GameScene : Scene
 	{
 		private int score;
-		Plane plane;
 
 
 		public override void BeginScene ()
 		{
-			plane = new Plane ();
 			score = 0;
-			ObjectManager.Add (plane);
-	
+			Plane plane = new Plane ();
+			Objects.Add (plane);
 			base.BeginScene ();
 		}
 

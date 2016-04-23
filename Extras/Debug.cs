@@ -16,6 +16,7 @@ namespace BudaEngine.Extras
 			if (Input.WasKeyPressed (Keys.OemTilde))
 				isToggled = !isToggled;
 		}
+			
 
 		public static void Draw(SpriteBatch spriteBatch){
 			if (isToggled) {

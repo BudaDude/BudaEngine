@@ -1,7 +1,8 @@
 ﻿using System;
-using BudaEngine.Core;
+using BudaEngine;
 using Microsoft.Xna.Framework.Graphics;
-namespace BudaEngine.Core
+
+namespace BudaEngine
 {
 	public class Scene
 	{
@@ -14,11 +15,11 @@ namespace BudaEngine.Core
 		/// Gets the object manager.
 		/// </summary>
 		/// <value>The object manager.</value>
-		public GameObjectManager ObjectManager{ get; private set;}
+		public GameObjectManager Objects{ get; private set;}
 
 		public Scene ()
 		{
-			ObjectManager = new GameObjectManager ();
+			Objects = new GameObjectManager ();
 		}
 
 		/// <summary>
@@ -32,7 +33,7 @@ namespace BudaEngine.Core
 		/// Is called when this scene is no longer the Current Scene
 		/// </summary>
 		public virtual void EndScene(){
-			ObjectManager.RemoveAll ();
+			Objects.RemoveAll ();
 		}
 
 		/// <summary>
@@ -40,11 +41,11 @@ namespace BudaEngine.Core
 		/// </summary>
 		public virtual void Update(){
 			if (isRunning)
-			ObjectManager.Update ();
+			Objects.Update ();
 		}
 
 		public virtual void Draw(SpriteBatch spriteBatch){
-			ObjectManager.Draw (spriteBatch);
+			Objects.Draw (spriteBatch);
 		}
 		/// <summary>
 		/// Pauses the scene from updating

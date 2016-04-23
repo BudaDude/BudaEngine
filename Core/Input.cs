@@ -2,7 +2,7 @@
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework;
 
-namespace BudaEngine.Core
+namespace BudaEngine
 {
 	public class Input
 	{
@@ -20,6 +20,10 @@ namespace BudaEngine.Core
 		/// <param name="key">Key.</param>
 		public static bool WasKeyPressed(Keys key){
 			return lastKeyboardState.IsKeyUp (key) && currentKeyboardState.IsKeyDown (key);
+		}
+
+		public static bool IsKeyDown(Keys key){
+			return currentKeyboardState.IsKeyDown (key);
 		}
 	}
 }

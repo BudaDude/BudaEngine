@@ -1,5 +1,5 @@
 ﻿using System;
-using BudaEngine.Core;
+using BudaEngine;
 using Microsoft.Xna.Framework;
 
 namespace FlappyBird
