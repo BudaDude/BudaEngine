@@ -13,7 +13,6 @@ namespace BudaEngine
 
 		public GameObject(){
 			Components = new ComponentManager ();
-			Components.GetComponent<Transform> ();
 		}
 
 		public virtual void Update(){
